@@ -1,5 +1,5 @@
 { lib, buildPythonPackage, fetchPypi, isPy3k
-, django, django_tagging, whisper, pycairo, cairocffi, ldap, memcached, pytz, urllib3, scandir
+, django, django_tagging, whisper, pycairo, cairocffi, ldap, memcached, pytz, urllib3, scandir ? null
 }:
 buildPythonPackage rec {
   pname = "graphite-web";
