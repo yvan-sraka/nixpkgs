@@ -323,6 +323,8 @@ in {
 
   aioshelly = callPackage ../development/python-modules/aioshelly { };
 
+  aiosmb = callPackage ../development/python-modules/aiosmb { };
+
   aiosmtpd = callPackage ../development/python-modules/aiosmtpd { };
 
   aiosqlite = callPackage ../development/python-modules/aiosqlite { };
@@ -1542,10 +1544,10 @@ in {
   cufflinks = callPackage ../development/python-modules/cufflinks { };
 
   cupy = callPackage ../development/python-modules/cupy {
-    cudatoolkit = pkgs.cudatoolkit_10_0;
-    cudnn = pkgs.cudnn_cudatoolkit_10_0;
-    nccl = pkgs.nccl_cudatoolkit_10;
-    cutensor = pkgs.cutensor_cudatoolkit_10;
+    cudatoolkit = pkgs.cudatoolkit_11;
+    cudnn = pkgs.cudnn_cudatoolkit_11;
+    nccl = pkgs.nccl_cudatoolkit_11;
+    cutensor = pkgs.cutensor_cudatoolkit_11;
   };
 
   curio = callPackage ../development/python-modules/curio { };
@@ -3109,6 +3111,8 @@ in {
 
   imgsize = callPackage ../development/python-modules/imgsize { };
 
+  iminuit = callPackage ../development/python-modules/iminuit { };
+
   immutables = callPackage ../development/python-modules/immutables { };
 
   impacket = callPackage ../development/python-modules/impacket { };
@@ -3742,7 +3746,6 @@ in {
 
   llfuse = callPackage ../development/python-modules/llfuse {
     inherit (pkgs) fuse;
-    inherit (pkgs.darwin.apple_sdk.frameworks) DiskArbitration;
   };
 
   llvmlite = callPackage ../development/python-modules/llvmlite {
@@ -4372,8 +4375,6 @@ in {
   numpy = callPackage ../development/python-modules/numpy { };
 
   numpy-stl = callPackage ../development/python-modules/numpy-stl { };
-
-  numtraits = callPackage ../development/python-modules/numtraits { };
 
   nunavut = callPackage ../development/python-modules/nunavut { };
 
@@ -5419,6 +5420,8 @@ in {
   pykka = callPackage ../development/python-modules/pykka { };
 
   pykmtronic = callPackage ../development/python-modules/pykmtronic { };
+
+  pykodi = callPackage ../development/python-modules/pykodi { };
 
   pykwalify = callPackage ../development/python-modules/pykwalify { };
 
@@ -7222,6 +7225,8 @@ in {
 
   softlayer = callPackage ../development/python-modules/softlayer { };
 
+  solaredge = callPackage ../development/python-modules/solaredge { };
+
   solax = callPackage ../development/python-modules/solax { };
 
   solo-python = disabledIf (!pythonAtLeast "3.6") (callPackage ../development/python-modules/solo-python { });
@@ -7310,7 +7315,7 @@ in {
 
   sphinx-argparse = callPackage ../development/python-modules/sphinx-argparse { };
 
-  sphinx-autobuild = callPackage ../development/python-modules/sphinx-argparse { };
+  sphinx-autobuild = callPackage ../development/python-modules/sphinx-autobuild { };
 
   sphinx-jinja = callPackage ../development/python-modules/sphinx-jinja { };
 
