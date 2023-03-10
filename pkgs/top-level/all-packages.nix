@@ -1002,6 +1002,8 @@ with pkgs;
   libgtkflow3 = callPackage ../development/libraries/libgtkflow3 { };
   libgtkflow4 = callPackage ../development/libraries/libgtkflow4 { };
 
+  libblst = callPackage ../development/libraries/blst { };
+
   libredirect = callPackage ../build-support/libredirect { };
 
   madonctl = callPackage ../applications/misc/madonctl { };
