@@ -12,7 +12,7 @@ stdenv.mkDerivation ( finalAttrs: {
 
   buildPhase = ''
     runHook preBuild
-    
+
     ./build.sh
 
     runHook postBuild
