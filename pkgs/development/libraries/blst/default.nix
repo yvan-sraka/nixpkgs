@@ -1,13 +1,13 @@
 { stdenv, lib, fetchFromGitHub, autoreconfHook }:
 
-stdenv.mkDerivation rec {
+stdenv.mkDerivation ( finalAttrs: {
   name = "blst-0.3.10";
 
   src = fetchFromGitHub {
     owner = "supranational";
     repo = "blst";
     rev = "03b5124029979755c752eec45f3c29674b558446";
-    sha256 = "01m28xxmm1x7riwyax7v9rycwl5isi06h2b2hl4gxnnylkayisn5";
+    hash = "01m28xxmm1x7riwyax7v9rycwl5isi06h2b2hl4gxnnylkayisn5";
   };
 
   buildPhase = "./build.sh";
@@ -24,6 +24,7 @@ stdenv.mkDerivation rec {
     description = "Multilingual BLS12-381 signature library";
     homepage = "https://github.com/supranational/blst";
     license = licenses.isc;
+    maintainers = with maintainers; [ iquerejeta ];
     platforms = platforms.all;
   };
-}
+})
