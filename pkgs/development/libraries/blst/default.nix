@@ -10,10 +10,20 @@ stdenv.mkDerivation ( finalAttrs: {
     hash = "01m28xxmm1x7riwyax7v9rycwl5isi06h2b2hl4gxnnylkayisn5";
   };
 
-  buildPhase = "./build.sh";
+  buildPhase = ''
+    runHook preBuild
+    
+    ./build.sh
+
+    runHook postBuild
+  '';
   installPhase = ''
+    runHook preInstall
+
     mkdir -p $out/lib
     cp ./libblst.a $out/lib/
+
+    runHook postInstall
   '';
 
   enableParallelBuilding = true;
