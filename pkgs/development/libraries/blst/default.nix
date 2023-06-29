@@ -7,7 +7,7 @@ stdenv.mkDerivation ( finalAttrs: {
     owner = "supranational";
     repo = "blst";
     rev = "03b5124029979755c752eec45f3c29674b558446";
-    hash = "sha256:01m28xxmm1x7riwyax7v9rycwl5isi06h2b2hl4gxnnylkayisn5";
+    hash = "sha256-xero1aTe2v4IhWIJaEDUsVDOfE77dOV5zKeHWntHogY=";
   };
 
   buildPhase = ''
