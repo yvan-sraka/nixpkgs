@@ -6513,9 +6513,9 @@
     name = "Igor Polyakov";
   };
   iquerejeta = {
-    name = "Inigo Querejeta-Azurmendi";
     github = "iquerejeta";
     githubId = 31273774;
+    name = "Inigo Querejeta-Azurmendi";
   };
   irenes = {
     name = "Irene Knapp";
