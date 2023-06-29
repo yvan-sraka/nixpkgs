@@ -6514,7 +6514,7 @@
   };
   iquerejeta = {
     name = "Inigo Querejeta-Azurmendi";
-    github = "iquerejeta"
+    github = "iquerejeta";
     githubId = 31273774;
   };
   irenes = {
