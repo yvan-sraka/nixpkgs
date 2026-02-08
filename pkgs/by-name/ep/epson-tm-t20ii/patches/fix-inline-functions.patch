@@ -1,0 +1,77 @@
+diff --git a/rastertozj.c b/rastertozj.c
+index cbb6d9e..f91ef98 100644
+--- a/rastertozj.c
++++ b/rastertozj.c
+@@ -50,7 +50,7 @@ FILE* lfd = 0;
+ #endif
+ 
+ // putchar with debug wrapper
+-inline void mputchar(char c)
++static inline void mputchar(char c)
+ {
+ 	unsigned char m = c;
+ #ifdef DEBUGP
+@@ -61,7 +61,7 @@ inline void mputchar(char c)
+ }
+ 
+ // procedure to output an array
+-inline void outputarray(const char * array, int length)
++static inline void outputarray(const char * array, int length)
+ {
+ 	int i = 0;
+ 	for (;i<length;++i)
+@@ -69,23 +69,23 @@ inline void outputarray(const char * array, int length)
+ }
+ 
+ // output a command
+-inline void outputCommand(struct command output)
++static inline void outputCommand(struct command output)
+ {
+ 	outputarray(output.command,output.length);
+ }
+ 
+-inline int lo(int val)
++static inline int lo(int val)
+ {
+ 	return val & 0xFF;
+ }
+ 
+-inline int hi (int val)
++static inline int hi (int val)
+ {
+ 	return lo (val>>8);
+ }
+ 
+ // enter raster mode and set up x and y dimensions
+-inline void rasterheader(int xsize, int ysize)
++static inline void rasterheader(int xsize, int ysize)
+ {
+ 	outputCommand(rasterModeStartCommand);
+ 	mputchar(lo(xsize));
+@@ -96,7 +96,7 @@ inline void rasterheader(int xsize, int ysize)
+ 
+ // print all unprinted (i.e. flush the buffer)
+ // then feed given number of lines
+-inline void skiplines(int size)
++static inline void skiplines(int size)
+ {
+ 	mputchar(0x1b);
+ 	mputchar(0x4a);
+@@ -104,7 +104,7 @@ inline void skiplines(int size)
+ }
+ 
+ // get an option
+-inline int getOptionChoiceIndex(const char * choiceName, ppd_file_t * ppd)
++static inline int getOptionChoiceIndex(const char * choiceName, ppd_file_t * ppd)
+ {
+ 	ppd_choice_t * choice;
+ 	ppd_option_t * option;
+@@ -121,7 +121,7 @@ inline int getOptionChoiceIndex(const char * choiceName, ppd_file_t * ppd)
+ }
+ 
+ 
+-inline void initializeSettings(char * commandLineOptionSettings)
++static inline void initializeSettings(char * commandLineOptionSettings)
+ {
+ 	ppd_file_t *    ppd         = NULL;
+ 	cups_option_t * options     = NULL;
